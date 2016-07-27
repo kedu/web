@@ -1,0 +1,64 @@
+a, address, b, big, blockquote, body, center, cite, code, dd, del, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, label, legend, li, ol, p, pre, small, span, strong, u, ul, var{
+    margin: 0;
+    padding: 0;
+}
+#header {
+ /*background-color: red;*/
+ text-align: right;
+}
+#header a{
+    display: inline-block;
+    /*background-color: red;*/
+    margin-top: 20px;
+    margin-right: 15px;
+}
+#header .more-product{
+ background-color: blue;
+           color: white;
+           padding: 5px;
+         text-decoration: none;
+}
+#body{
+    /*background-color: red;*/
+  text-align: center;
+    margin-top: 20px;
+
+}
+#body img{
+    width: 270px;
+    height: 129px;
+}
+#body input{
+    width: 540px;
+    height: 32px;
+}
+#body input:focus{
+    border: 1px solid gray;
+}
+#body button{
+    background-color: blue;
+    width: 100px;
+    height: 35px;
+    color: white;
+    font-size: 13px;
+    margin: 5px;
+}
+#footer{
+    text-align: center;
+    margin-top: 250px;
+    /*background-color: red;*/
+}
+#footer .footer-top{
+    margin-bottom: 6px;
+}
+#footer .footer-top a{
+    margin-right: 50px;
+    font-size: 10px;
+}
+#footer .footer-bottom a{
+    margin-right: 10px;
+}
+#footer .footer-bottom label{
+    font-size: 10px;
+    margin-right: 10px;
+}
