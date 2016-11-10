@@ -8,19 +8,18 @@
     <style type="text/css">
         html{color:#111;background:#fff}body,div,dl,dt,dd,ul,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,blockquote{margin:0;padding:0}
        .header{
-           /*background-color: red;*/
            width: 950px;
            margin: 0 auto;
        }
-       a{  display: inline-block;
+       .hdleft{  display: inline-block;
            width: 154px;
            height: 30px;
            margin-right: 20px;
        }
-        img{
+       .hdleft img{
             display: inline-block;
         }
-        form{
+        .hdform{
             vertical-align: super;
             position: relative;
             display: inline-block;
@@ -52,24 +51,29 @@
         body{
             padding-top: 30px;
         }
-        ul{
+        .hdright{
             list-style: none;
             display: inline-block;
             vertical-align: middle;
             overflow: hidden;
         }
-        li{
+        .hdright li{
             float: left;
             width: 40px;
             height: 36px;
             margin-left: 20px;
-
             vertical-align:middle;
             margin-top: 5px;
+            overflow: hidden;
         }
         .hdright a{
-            background-image: url("https://img3.doubanio.com/f/sns/a98a716a173efb01ba787c966b4ba337b7cf9f55/pics/sns/anony_home/anony_nav_logo.png");
-            background: url("https://img3.doubanio.com/f/sns/a98a716a173efb01ba787c966b4ba337b7cf9f55/pics/sns/anony_home/anony_nav_logo.png") no-repeat;
+            font-size: 13em;
+            color: transparent;
+            vertical-align: middle;
+            overflow: hidden;
+            height: 36px;
+            width: 40px;
+            background: url("https://img3.doubanio.com/f/sns/a98a716a173efb01ba787c966b4ba337b7cf9f55/pics/sns/anony_home/anony_nav_logo.png") no-repeat ;
         }
         a.lnk-movie{
             background-position: -60px 0;
@@ -77,7 +81,7 @@
         a.lnk-music{
             background-position: -120px 0;
         }
-         a.lnk-group{
+        a.lnk-group{
             background-position: -180px 0;
         }
          a.lnk-events{
@@ -105,23 +109,24 @@
 </head>
 <body>
 <div id="header" class="header">
-        <a href="https://www.douban.com/"><img src="https://img3.doubanio.com/f/sns/19886d443852bee48de2ed91f4a3bdfdaf8c809c/pics/nav/logo_db.png"></a>
+        <a  class="hdleft" href="https://www.douban.com/"><img  src="https://img3.doubanio.com/f/sns/19886d443852bee48de2ed91f4a3bdfdaf8c809c/pics/nav/logo_db.png"></a>
         <form class="hdform">
             <input type="text" class="hdtext" placeholder="书籍、电影、音乐、小组、小站、成员">
             <input type="submit" class="hdsm" value="">
         </form>
     <ul class="hdright">
-        <li> <a target="_blank" class="lnk-book" href="https://book.douban.com"></a></li>
-        <li> <a target="_blank" class="lnk-movie" href="https://movie.douban.com"></a></li>
-        <li> <a target="_blank" class="lnk-music" href="https://music.douban.com"></a></li>
-        <li> <a target="_blank" class="lnk-group" href="https://www.douban.com/group/"></a></li>
-        <li> <a target="_blank" class="lnk-events" href="https://www.douban.com/location/"></a></li>
-        <li> <a target="_blank" class="lnk-fm" href="https://douban.fm"></a></li>
-        <li> <a target="_blank" class="lnk-dongxi" href="https://dongxi.douban.com?dcs=anonymous-home&amp;dcm=douban"></a></li>
-        <li> <a target="_blank" class="lnk-market" href="https://market.douban.com?utm_campaign=anonymous_top_nav&amp;utm_source=douban&amp;utm_medium=pc_web"></a></li>
+        <li> <a target="_blank" class="lnk-book" href="https://book.douban.com">豆瓣读书</a></li>
+        <li> <a target="_blank" class="lnk-movie" href="https://movie.douban.com">豆瓣电影</a></li>
+        <li> <a target="_blank" class="lnk-music" href="https://music.douban.com">豆瓣音乐</a></li>
+        <li> <a target="_blank" class="lnk-group" href="https://www.douban.com/group/">豆瓣小组</a></li>
+        <li> <a target="_blank" class="lnk-events" href="https://www.douban.com/location/">豆瓣同城</a></li>
+        <li> <a target="_blank" class="lnk-fm" href="https://douban.fm">豆瓣FM</a></li>
+        <li> <a target="_blank" class="lnk-dongxi" href="https://dongxi.douban.com?dcs=anonymous-home&amp;dcm=douban">豆瓣东西</a></li>
+        <li> <a target="_blank" class="lnk-market" href="https://market.douban.com?utm_campaign=anonymous_top_nav&amp;utm_source=douban&amp;utm_medium=pc_web">豆瓣市集</a></li>
     </ul>
 </div>
-<div id="middle" class="middle"></div>
+<div id="middle" class="middle">
+</div>
 <div id="bottom" class="bottom"></div>
 
 </body>
