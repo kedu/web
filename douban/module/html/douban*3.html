@@ -5,106 +5,75 @@
     <!--标签栏图片-->
     <link rel="shortcut icon" href="https://www.douban.com/favicon.ico" type="image/x-icon" />
     <title>豆瓣</title>
+    <link rel="stylesheet" href="../css/header.css">
     <style type="text/css">
-        html{color:#111;background:#fff}body,div,dl,dt,dd,ul,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,blockquote{margin:0;padding:0}
-       .header{
-           width: 950px;
-           margin: 0 auto;
-       }
-       .hdleft{  display: inline-block;
-           width: 154px;
-           height: 30px;
-           margin-right: 20px;
-       }
-       .hdleft img{
-            display: inline-block;
+        *{
+            margin: 0px;
+            padding: 0px;
         }
-        .hdform{
-            vertical-align: super;
+        #reg{
+            width: 950px;
+            margin: 0 auto;
+        }
+        .reg{
+            width: 1280px;
+            height: 178px;
+            margin-bottom: 25px;
+            overflow: hidden;
+            background-image: url("https://img3.doubanio.com/f/sns/463f29e6c00cdc1d15226bdcd3c86908526b9380/pics/sns/anony_home/doubanapp4_bg.png");
+        }
+        .app{
+            display: inline-block;
             position: relative;
-            display: inline-block;
-            border: 1px solid #c3c3c3;
+            width: 684px;
+            height: 212px;
+            background-image: url("https://img3.doubanio.com/f/sns/71a3e6872fb1f82eee7c462ef18c44d419dd7c99/pics/sns/anony_home/doubanapp4.png");
+            background-repeat:no-repeat;
         }
-        .hdtext{
-            font-size: 13px;
-            display: inline-block;
-            width: 240px;
-            height: 20px;
-            margin-right: 3px;
-            padding: 5px;
-            border: none;
-
-        }
-        .hdsm{
+        .app-text{
             position: absolute;
-            right:3px;
-            top: 11px;
-            background: url("https://img3.doubanio.com/f/sns/f71f15922ebd7c0ff0ea0e7a25577529efd8981a/pics/icon/bn_srh_1.png") no-repeat;
-            width: 30px;
-            height: 30px;
-            border: none;
-            cursor: pointer;
-            background-position: right top;
-
-
+            right: 82px;
+            top: 8px;
+            margin: 20px;
         }
-        body{
-            padding-top: 30px;
+        .app-title{
+            width: 150px;
+            font-size: 25px;
+            margin: 7px 0px;
         }
-        .hdright{
-            list-style: none;
+        .app-sum{
+            font-size: 12px;
+            margin: 7px 0px;
+            text-align: justify;
+            margin-bottom: 18px;
+        }
+        .app-down{
             display: inline-block;
-            vertical-align: middle;
-            overflow: hidden;
+            text-decoration: none;
+            background-color: #00B51D;
+            color: #FFF;
+            padding: 9px 21px;
+            margin-right: 2px;
+            border-radius: 2px;
+            vertical-align: top;
+            font-size: 12px;
         }
-        .hdright li{
-            float: left;
-            width: 40px;
-            height: 36px;
-            margin-left: 20px;
-            vertical-align:middle;
-            margin-top: 5px;
-            overflow: hidden;
+        .lnk-qr{
+            border: 1px solid #48aa0d;
+            border-radius: 2px;
+            display: inline-block;
+            background-color: transparent;
         }
-        .hdright a{
-            font-size: 13em;
-            color: transparent;
-            vertical-align: middle;
-            overflow: hidden;
-            height: 36px;
-            width: 40px;
-            background: url("https://img3.doubanio.com/f/sns/a98a716a173efb01ba787c966b4ba337b7cf9f55/pics/sns/anony_home/anony_nav_logo.png") no-repeat ;
+        .login{
+            float: right;
         }
-        a.lnk-movie{
-            background-position: -60px 0;
+        .reg{
         }
-        a.lnk-music{
-            background-position: -120px 0;
-        }
-        a.lnk-group{
-            background-position: -180px 0;
-        }
-         a.lnk-events{
-            background-position: -240px 0;
-        }
-         a.lnk-fm{
-            background-position: -300px 0;
-        }
-        a.lnk-dongxi{
-             background-position: -360px 0;
-         }
-        a.lnk-market{
-              background-position: -420px 0;
-          }
+        .lg-fm{
 
-
-        
-        
-
+        }
     </style>
     <script type="javascript">
-
-
     </script>
 </head>
 <body>
@@ -126,6 +95,40 @@
     </ul>
 </div>
 <div id="middle" class="middle">
+    <div id="reg" class="reg">
+        <div class="app">
+            <div class="app-text">
+                <p class="app-title">豆瓣&nbsp&nbsp4.0</p>
+                <p class="app-sum">我&nbsp们&nbsp的&nbsp精&nbsp神&nbsp角&nbsp落</p>
+                <a  class="app-down" href="">下载豆瓣app</a>
+                <a href="javascript: void 0;" class="lnk-qr" id="expand-qr"><img src="https://img3.doubanio.com/f/sns/0c708de69ce692883c1310053c5748c538938cb0/pics/sns/anony_home/icon_qrcode_green.png" width="28" height="28"></a>
+            </div>
+
+        </div>
+        <div class="login">
+              <div class="lg-fm">
+            <form class="fm">
+                <input  class="mail" type="text" placeholder="邮箱/手机号">
+                <input  class="pwd" type="password" placeholder="密码">
+                <input  class="mail" type="submit" value="登录">
+                <a href="">注册</a>
+                <input type="checkbox">
+                <a href=""></a>
+                <a href=""></a>
+
+            </form>
+              </div>
+        </div>
+
+
+    </div>
+    <!--<div id="reg" class="reg"></div>-->
+    <!--<div id="reg" class="reg"></div>-->
+    <!--<div id="reg" class="reg"></div>-->
+    <!--<div id="reg" class="reg"></div>-->
+    <!--<div id="reg" class="reg"></div>-->
+    <!--<div id="reg" class="reg"></div>-->
+    <!--<div id="reg" class="reg"></div>-->
 </div>
 <div id="bottom" class="bottom"></div>
 
