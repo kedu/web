@@ -6,8 +6,14 @@
     <title>豆瓣</title>
     <style type="text/css">
         /*<!--清空所有标签的内边距和外边距-->*/
-        html{color:#111;background:#fff}body,div,dl,dt,dd,ul,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,blockquote{margin:0;padding:0}
+        html{color:#111;background:#fff}body,div,dl,dt,dd,ul,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,blockquote{margin:0;padding:0 ;display: inline-block}
         .nav{
+            background-color: blue;
+        }
+        .header{
+            background-color: red;
+        }
+        .nav-left{
             display: inline-block;
         }
         .nav-left-a{
@@ -23,6 +29,9 @@
             width: 160px;
             height: 34px;
         }
+        .nav-left-a{
+            line-height: 12em;
+        }
         header div{
             display: inline-block;
         }
@@ -32,24 +41,43 @@
         .nav-right ul{
             float: right;
         }
+        .inp input{
+            width: 240px;
+            height: 20px;
+        }
+        .bn input{
+            width: 30px;
+            height: 30px;
+        }
+        .bn{
+            background: url("https://img3.doubanio.com/f/sns/f71f15922ebd7c0ff0ea0e7a25577529efd8981a/pics/icon/bn_srh_1.png") no-repeat ;
+            position: relative;
+            left: -40px;
+        }
+        form{
+            background-color: orange;
+        }
+
 
 
     </style>
+    <script>
+        console.log("我来了,你准备好了吗");
+    </script>
 </head>
 <body>
 <!--头部-->
     <div class="header">
         <!--导航模块-->
         <div class="nav">
-            <div class="nav-left"><h1>
-                <a class="nav-left-a" href="https://www.douban.com/"></a></h1>
+            <div class="nav-left">
+                <h1><a class="nav-left-a" href="https://www.douban.com/">豆瓣</a></h1>
+                <form action="https://www.douban.com/search",method="get">
+                    <span class="inp"><input type="text" placeholder="书籍、电影、音乐、小组、小站、成员"></span>
+                    <span class="bn"><input type="submit" value="搜索"></span>
+                </form>
             </div>
             <div class="nav-middle">
-                <form>
-                    <input>
-                    <input>
-                </form>
-
             </div>
             <div class="nav-right">
                 <ul>

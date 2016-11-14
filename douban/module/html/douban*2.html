@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="https://www.douban.com/favicon.ico" type="image/x-icon" />
+    <title>豆瓣</title>
+    <style type="text/css">
+        html{color:#111;background:#fff}body,div,dl,dt,dd,ul,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,blockquote{margin:0;padding:0;}
+        #header div{
+            display: inline-block;
+        }
+        #header{
+            width: 950px;
+            margin: 0 auto 25px;
+            /*background-color: blue;*/
+        }
+        body{
+            padding-top: 30px;
+        }
+        .hdleft{
+            background-color: chartreuse;
+        }
+        .hdleft h1{
+            padding-right: 20px ;
+            display: inline-block;
+            vertical-align:middle;
+            background: url("https://img3.doubanio.com/f/sns/19886d443852bee48de2ed91f4a3bdfdaf8c809c/pics/nav/logo_db.png") no-repeat 0 0;
+            width: 160px;
+            height: 34px;
+            overflow: hidden;
+        }
+        .hdmiddle{
+            display: inline-block;
+            vertical-align:middle;
+            width: 280px;
+            height: 30px;
+            background-color: orange;
+            border: 1px solid black;
+        }
+        .hdright{
+            background-color: wheat;
+        }
+        .hdleft a{
+                  display: inline-block;
+                  width: 160px;
+                  height: 34px;
+                  line-height: 12em;
+                 }
+        .inp input{
+            display: inline-block;
+            width: 240px;
+            height: 20px;
+        }
+        .bn input{
+
+            width: 30px;
+            height: 30px;
+            position: relative;
+            left: -40px;
+        }
+        .bn input{
+            background-position: 5px;
+            background: url("https://img3.doubanio.com/f/sns/f71f15922ebd7c0ff0ea0e7a25577529efd8981a/pics/icon/bn_srh_1.png") no-repeat ;
+            /*position: absolute;*/
+            vertical-align: middle;
+            width: 30px;
+            height: 30px;
+        }
+        .hdmiddle form{
+            display: inline-block;
+        }
+        .hdright li{
+            float: left;
+        }
+        .hdright{
+            /*width: 800px;*/
+            background-color: red;
+        }
+        .hdright ul{
+            list-style: none;
+            height: 20px;
+        }
+        .hdright li{
+        }
+        .hdright a{
+            color: transparent;
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+            margin-left: 20px;
+            background-image: url("https://img3.doubanio.com/f/sns/a98a716a173efb01ba787c966b4ba337b7cf9f55/pics/sns/anony_home/anony_nav_logo.png");
+            background: url("https://img3.doubanio.com/f/sns/a98a716a173efb01ba787c966b4ba337b7cf9f55/pics/sns/anony_home/anony_nav_logo.png") no-repeat ;
+            overflow: hidden;
+            /*background-position: -80px 0;*/
+        }
+        .hdright a.lnk-movie{
+            background-position: -60px 0;
+        }
+        .hdright a.lnk-music{
+            background-position: -120px 0;
+        }
+        .hdright a.lnk-group{
+            background-position: -180px 0;
+        }
+        .hdright a.lnk-events{
+            background-position: -240px 0;
+        }
+        .hdright a.lnk-fm{
+            background-position: -300px 0;
+        }.hdright a.lnk-dongxi{
+            background-position: -360px 0;
+        }.hdright a.lnk-market{
+            background-position: -420px 0;
+        }
+
+
+
+
+    </style>
+    <script type="javascript"></script>
+</head>
+<body>
+<div id="header">
+    <div class="hdleft">
+        <h1><a class="nav-left-a" href="https://www.douban.com/">豆瓣</a></h1>
+    </div>
+    <div class="hdmiddle">
+        <form action="https://www.douban.com/search",method="get">
+            <span class="inp"><input type="text" placeholder="书籍、电影、音乐、小组、小站、成员"></span>
+            <span class="bn"><input type="submit" value="搜索"></span>
+        </form>
+    </div>
+    <div class="hdright">
+        <ul>
+            <li> <a target="_blank" class="lnk-book" href="https://book.douban.com">豆瓣读书</a></li>
+            <li> <a target="_blank" class="lnk-movie" href="https://movie.douban.com">豆瓣电影</a></li>
+            <li> <a target="_blank" class="lnk-music" href="https://music.douban.com">豆瓣音乐</a></li>
+            <li> <a target="_blank" class="lnk-group" href="https://www.douban.com/group/">豆瓣小组</a></li>
+            <li> <a target="_blank" class="lnk-events" href="https://www.douban.com/location/">豆瓣同城</a></li>
+            <li> <a target="_blank" class="lnk-fm" href="https://douban.fm">豆瓣FM</a></li>
+            <li> <a target="_blank" class="lnk-dongxi" href="https://dongxi.douban.com?dcs=anonymous-home&amp;dcm=douban">豆瓣东西</a></li>
+            <li> <a target="_blank" class="lnk-market" href="https://market.douban.com?utm_campaign=anonymous_top_nav&amp;utm_source=douban&amp;utm_medium=pc_web">豆瓣市集</a></li>
+        </ul>
+    </div>
+</div>
+<div id="middle"></div>
+<div id="bottom"></div>
+
+</body>
+</html>

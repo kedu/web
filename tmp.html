@@ -1,0 +1,920 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script>
+        < !--(function() {
+            var c = this,
+            h = function(a, b, d) {
+            return a.call.apply(a.bind, arguments)
+        },
+            k = function(a, b, d) {
+            if (!a) throw Error();
+            if (2 < arguments.length) {
+            var q = Array.prototype.slice.call(arguments, 2);
+            return function() {
+            var d = Array.prototype.slice.call(arguments);
+            Array.prototype.unshift.apply(d, q);
+            return a.apply(b, d)
+        }
+        }
+            return function() {
+            return a.apply(b, arguments)
+        }
+        },
+            l = function(a, b, d) {
+            l = Function.prototype.bind && -1 != Function.prototype.bind.toString().indexOf("native code") ? h: k;
+            return l.apply(null, arguments)
+        };
+            var m = document,
+            n = window;
+            var p = String.prototype.trim ?
+            function(a) {
+            return a.trim()
+        }: function(a) {
+            return a.replace(/^[\s\xa0]+|[\s\xa0]+$/g, "")
+        },
+            r = function(a, b) {
+            return a < b ? -1 : a > b ? 1 : 0
+        };
+            var t;
+            a: {
+            var u = c.navigator;
+            if (u) {
+            var v = u.userAgent;
+            if (v) {
+            t = v;
+            break a
+        }
+        }
+            t = ""
+        };
+            var x = function(a, b) {
+            var d = w;
+            Object.prototype.hasOwnProperty.call(d, a) || (d[a] = b(a))
+        };
+            var y = -1 != t.indexOf("Opera"),
+            z = -1 != t.indexOf("Trident") || -1 != t.indexOf("MSIE"),
+            A = -1 != t.indexOf("Edge"),
+            B = -1 != t.indexOf("Gecko") && !( - 1 != t.toLowerCase().indexOf("webkit") && -1 == t.indexOf("Edge")) && !( - 1 != t.indexOf("Trident") || -1 != t.indexOf("MSIE")) && -1 == t.indexOf("Edge"),
+            C = -1 != t.toLowerCase().indexOf("webkit") && -1 == t.indexOf("Edge"),
+            D = function() {
+            var a = c.document;
+            return a ? a.documentMode: void 0
+        },
+            E;
+            a: {
+            var F = "",
+            G = function() {
+            var a = t;
+            if (B) return /rv\:([^\);]+)(\)|;)/.exec(a);
+            if (A) return /Edge\/([\d\.]+)/.exec(a);
+            if (z) return /\b(?:MSIE|rv)[: ]([^\);]+)(\)|;)/.exec(a);
+            if (C) return /WebKit\/(\S+)/.exec(a);
+            if (y) return /(?:Version)[ \/]?(\S+)/.exec(a)
+        } ();
+            G && (F = G ? G[1] : "");
+            if (z) {
+            var H = D();
+            if (null != H && H > parseFloat(F)) {
+            E = String(H);
+            break a
+        }
+        }
+            E = F
+        }
+            var I = E,
+            w = {},
+            J = function(a) {
+            x(a,
+            function() {
+            for (var b = 0,
+            d = p(String(I)).split("."), q = p(String(a)).split("."), P = Math.max(d.length, q.length), e = 0; 0 == b && e < P; e++) {
+            var f = d[e] || "",
+            g = q[e] || "";
+            do {
+            f = /(\d*)(\D*)(.*)/.exec(f) || ["", "", "", ""];
+            g = /(\d*)(\D*)(.*)/.exec(g) || ["", "", "", ""];
+            if (0 == f[0].length && 0 == g[0].length) break;
+            b = r(0 == f[1].length ? 0 : parseInt(f[1], 10), 0 == g[1].length ? 0 : parseInt(g[1], 10)) || r(0 == f[2].length, 0 == g[2].length) || r(f[2], g[2]);
+            f = f[3];
+            g = g[3]
+        } while ( 0 == b )
+        }
+            return 0 <= b
+        })
+        },
+            K;
+            var L = c.document;
+            K = L && z ? D() || ("CSS1Compat" == L.compatMode ? parseInt(I, 10) : 5) : void 0;
+            var M;
+            if (! (M = !B && !z)) {
+            var N;
+            if (N = z) N = 9 <= Number(K);
+            M = N
+        }
+            M || B && J("1.9.1");
+            z && J("9");
+            var O = function() {
+            this.g = this.g;
+            this.h = this.h
+        };
+            O.prototype.g = !1;
+            O.prototype.o = function() {
+            this.g || (this.g = !0, this.j())
+        };
+            O.prototype.j = function() {
+            if (this.h) for (; this.h.length;) this.h.shift()()
+        };
+            var Q = function() {
+            O.call(this);
+            this.l = l(this.s, this);
+            this.i = l(this.o, this);
+            this.m = window.setTimeout(this.i, 3E3);
+            var a = this.l;
+            n.addEventListener ? n.addEventListener("click", a, !1) : n.attachEvent && n.attachEvent("onclick", a);
+            a = this.i;
+            m.addEventListener ? m.addEventListener("DOMContentLoaded", a, !1) : m.attachEvent && m.attachEvent("onDOMContentLoaded", a)
+        }; (function() {
+            function a() {}
+            a.prototype = O.prototype;
+            Q.g = O.prototype;
+            Q.prototype = new a;
+            Q.prototype.constructor = Q;
+            Q.h = function(a, d, q) {
+            for (var b = Array(arguments.length - 2), e = 2; e < arguments.length; e++) b[e - 2] = arguments[e];
+            return O.prototype[d].apply(a, b)
+        }
+        })();
+            Q.prototype.s = function(a) {
+            a.preventDefault ? a.preventDefault() : a.returnValue = !1
+        };
+            Q.prototype.j = function() {
+            this.m && window.clearTimeout(this.m);
+            var a = this.l;
+            n.removeEventListener ? n.removeEventListener("click", a, !1) : n.detachEvent && n.detachEvent("onclick", a);
+            a = this.i;
+            m.removeEventListener ? m.removeEventListener("DOMContentLoaded", a, !1) : m.detachEvent && m.detachEvent("onDOMContentLoaded", a);
+            Q.g.j.call(this)
+        };
+            var R = function() {
+            return new Q
+        },
+            S = ["goog_init_pcb"],
+            T = c;
+            S[0] in T || !T.execScript || T.execScript("var " + S[0]);
+            for (var U; S.length && (U = S.shift());) {
+            var V;
+            if (V = !S.length) V = void 0 !== R;
+            V ? T[U] = R: T[U] ? T = T[U] : T = T[U] = {}
+        };
+        }).call(this);
+        goog_init_pcb(); //-->
+
+    </script>
+</head>
+
+<body leftMargin="0" topMargin="0" marginwidth="0" marginheight="0">
+<iframe src="https://bdsp-x.jd.com/adm/google?cb=eNqTuMGqEKWlZmhgEm9mmWZgYpaaaGJkamKSbGJskWphaWpmYWRiZmRsmWZoFm9ocFnIisGJ09RCz8xQz0zPwIshiN3QUtfQzMA8IiOJpyRPpzRRpyI9VScvOYOtSMXY3NHRzMzFVdfZ0cBZ18TNxUXX0dnIUdfUydLY3MXVzcnc2byigbGLkcvQAAgszC2NjSYxSoQ7J0blOjp6JGu7eudkartmBxaVmDra2s5kZAABh_UOixjZjIwtzK0sVjEybGBkBACAbjAV&p=WCaZmAAHc-EKli-EAArt5FNP7ll1FwcAYcT-pw&JSVDTElDS19VUkxfRVNDJSU~=http://adclick.g.doubleclick.net/aclk%3Fsa%3DL%26ai%3DChBVCmJkmWOHnHYTf2ATk26uICe34uvBGhvrd7bUDwI23ARABIABgnaHfgdgFggEbY2EtYXBwLXB1Yi0yODEzMDA4NTg5MjY2ODA2yAEJqQKSajGeobODPqgDAaoEjgFP0I731AWfiTeGTxxAFJXmKx-nFMVubTArQc37pOzGDKXZ03Wz_99FNXcc_JDZT_YFlu35SwdRo8ct2hQRBzgYssu2Uf24l_jIZuKAssFpfBmwLZC64WeL5z7kh16lsAAIBxE5FFuTd8ihWGdORpAQZ12shK77lp4AT6Y0SDneLw9u7Qtd-mpXHk9QG5r6gAbXuciym4P4snKgBiGoB6a-G9gHANIIBQiAYRAB%26num%3D1%26sig%3DAOD64_1oRFGlOgf5wZSiYOlKg0bM8_jbfQ%26client%3Dca-app-pub-2813008589266806%26adurl%3D&sku=eNrjKuLY2HLNQOBp1xt9iXmr7-srTNh5dhm7BqNhtcg694dVS-wtYQwHJi-27MyixMqMAIYohkQGKMj4DwOMBYwVjA2MTF2MTCV5ExjffZWZwfiYdQHj5l1cKxgZNzLCDBKawMhlm5VWrF9ibGppqm9obKhvaGJoYWFuZmRooW9kYWAEFEg1NUk2SjXVN7UwMjUxNbf0S0y1NDU1ME3WyypIF3LMKCkpsNLXzzDVy9XLStFLzs_VT0wuySxL1TfKNEstNnRzLSj1CvFwLk8NrioOdwxK8YqqTCrUz8xLSa3QyyjJzZFgUOIyN7KosDQAGQgAqyZYtw~~"
+        width=728 height=90 scrolling=no marginwidth=0 marginheight=0 frameborder=0/>
+    <script>
+        (function() {
+            var e = this,
+                    k = function(a, b, c) {
+                        return a.call.apply(a.bind, arguments)
+                    },
+                    l = function(a, b, c) {
+                        if (!a) throw Error();
+                        if (2 < arguments.length) {
+                            var d = Array.prototype.slice.call(arguments, 2);
+                            return function() {
+                                var c = Array.prototype.slice.call(arguments);
+                                Array.prototype.unshift.apply(c, d);
+                                return a.apply(b, c)
+                            }
+                        }
+                        return function() {
+                            return a.apply(b, arguments)
+                        }
+                    },
+                    m = function(a, b, c) {
+                        m = Function.prototype.bind && -1 != Function.prototype.bind.toString().indexOf("native code") ? k: l;
+                        return m.apply(null, arguments)
+                    },
+                    n = Date.now ||
+                            function() {
+                                return + new Date
+                            };
+            var p = String.prototype.trim ?
+                            function(a) {
+                                return a.trim()
+                            }: function(a) {
+                        return a.replace(/^[\s\xa0]+|[\s\xa0]+$/g, "")
+                    },
+                    q = function(a, b) {
+                        return a < b ? -1 : a > b ? 1 : 0
+                    };
+            var r;
+            a: {
+                var t = e.navigator;
+                if (t) {
+                    var v = t.userAgent;
+                    if (v) {
+                        r = v;
+                        break a
+                    }
+                }
+                r = ""
+            };
+            var x = function(a, b) {
+                var c = w;
+                Object.prototype.hasOwnProperty.call(c, a) || (c[a] = b(a))
+            };
+            var aa = -1 != r.indexOf("Opera"),
+                    y = -1 != r.indexOf("Trident") || -1 != r.indexOf("MSIE"),
+                    ba = -1 != r.indexOf("Edge"),
+                    z = -1 != r.indexOf("Gecko") && !( - 1 != r.toLowerCase().indexOf("webkit") && -1 == r.indexOf("Edge")) && !( - 1 != r.indexOf("Trident") || -1 != r.indexOf("MSIE")) && -1 == r.indexOf("Edge"),
+                    ca = -1 != r.toLowerCase().indexOf("webkit") && -1 == r.indexOf("Edge"),
+                    A = function() {
+                        var a = e.document;
+                        return a ? a.documentMode: void 0
+                    },
+                    B;
+            a: {
+                var C = "",
+                        D = function() {
+                            var a = r;
+                            if (z) return /rv\:([^\);]+)(\)|;)/.exec(a);
+                            if (ba) return /Edge\/([\d\.]+)/.exec(a);
+                            if (y) return /\b(?:MSIE|rv)[: ]([^\);]+)(\)|;)/.exec(a);
+                            if (ca) return /WebKit\/(\S+)/.exec(a);
+                            if (aa) return /(?:Version)[ \/]?(\S+)/.exec(a)
+                        } ();
+                D && (C = D ? D[1] : "");
+                if (y) {
+                    var E = A();
+                    if (null != E && E > parseFloat(C)) {
+                        B = String(E);
+                        break a
+                    }
+                }
+                B = C
+            }
+            var F = B,
+                    w = {},
+                    G = function(a) {
+                        x(a,
+                                function() {
+                                    for (var b = 0,
+                                                 c = p(String(F)).split("."), d = p(String(a)).split("."), u = Math.max(c.length, d.length), f = 0; 0 == b && f < u; f++) {
+                                        var g = c[f] || "",
+                                                h = d[f] || "";
+                                        do {
+                                            g = /(\d*)(\D*)(.*)/.exec(g) || ["", "", "", ""];
+                                            h = /(\d*)(\D*)(.*)/.exec(h) || ["", "", "", ""];
+                                            if (0 == g[0].length && 0 == h[0].length) break;
+                                            b = q(0 == g[1].length ? 0 : parseInt(g[1], 10), 0 == h[1].length ? 0 : parseInt(h[1], 10)) || q(0 == g[2].length, 0 == h[2].length) || q(g[2], h[2]);
+                                            g = g[3];
+                                            h = h[3]
+                                        } while ( 0 == b )
+                                    }
+                                    return 0 <= b
+                                })
+                    },
+                    H;
+            var I = e.document;
+            H = I && y ? A() || ("CSS1Compat" == I.compatMode ? parseInt(F, 10) : 5) : void 0;
+            var J;
+            if (! (J = !z && !y)) {
+                var K;
+                if (K = y) K = 9 <= Number(H);
+                J = K
+            }
+            J || z && G("1.9.1");
+            y && G("9");
+            var L = function(a, b, c) {
+                a.addEventListener ? a.addEventListener(b, c, !1) : a.attachEvent && a.attachEvent("on" + b, c)
+            };
+            var M = /^(?:([^:/ ? #.] + ) : ) ? ( ? :\ / \ / ( ? :([ ^ /?#]*)@)?([^/# ? ] * ?)( ? ::([0 - 9] + )) ? ( ? =[/#?]|$))?([^?#]+)?(?:\?([^#]*))?(?:#([\s\S]*))?$/, N = function(a) {
+                return a ? decodeURI(a) : a
+            };
+            var O = function(a) {
+                        da();
+                        this.enabled = Math.random() < a
+                    },
+                    da = e.performance && e.performance.now ? m(e.performance.now, e.performance) : n;
+            var P = function(a) {
+                O.call(this, a)
+            }; (function() {
+                function a() {}
+                a.prototype = O.prototype;
+                P.M = O.prototype;
+                P.prototype = new a;
+                P.prototype.constructor = P;
+                P.J = function(a, c, d) {
+                    for (var b = Array(arguments.length - 2), f = 2; f < arguments.length; f++) b[f - 2] = arguments[f];
+                    return O.prototype[c].apply(a, b)
+                }
+            })();
+            var Q = document,
+                    R = window; new P(1E-4);
+            var U = function(a, b, c, d, u, f, g, h, ea) {
+                S(Q.hidden) ? (this.h = "hidden", this.j = "visibilitychange") : S(Q.mozHidden) ? (this.h = "mozHidden", this.j = "mozvisibilitychange") : S(Q.msHidden) ? (this.h = "msHidden", this.j = "msvisibilitychange") : S(Q.webkitHidden) && (this.h = "webkitHidden", this.j = "webkitvisibilitychange");
+                this.m = !1;
+                this.g = a;
+                this.i = -1;
+                this.B = b;
+                this.C = c;
+                this.I = d;
+                this.F = f;
+                this.v = g ? "mousedown": "click";
+                u && Q[this.h] && T(this, 2);
+                this.G = h;
+                this.D = ea || 0;
+                this.s = this.w = this.l = this.u = null;
+                a = m(this.H, this);
+                L(Q, this.j, a);
+                fa(this)
+            }; U.prototype.H = function() {
+                if (Q[this.h]) this.m && (this.A(), this.i = n(), T(this, 0));
+                else {
+                    if ( - 1 != this.i) {
+                        var a = n() - this.i;
+                        a > this.D && (this.i = -1, T(this, 1, a), null !== this.g && (this.g.registerFinalizeCallback(m(this.g.fireOnObject, this.g, "attempt_survey_trigger", ["wfocus", this.C, this.B, this.l, this.w, this.s, a])), 5E3 < a && this.g.fireOnObject("should_show_thank_you", {})))
+                    }
+                    this.F && T(this, 3)
+                }
+            };
+            var fa = function(a) {
+                if (null !== a.g) {
+                    var b = m(function(a, b, c) {
+                                this.l = b.N().L();
+                                this.l || (a = b.K(), this.l = "" + N(a.match(M)[3] || null) + N(a.match(M)[5] || null));
+                                this.w = b.creativeConversionUrl();
+                                this.s = b.adGroupCreativeId();
+                                this.o(c)
+                            },
+                            a),
+                            c = a.v;
+                    a.g.forEachAd(function(a) {
+                        a.forEachNavigationAdPiece(function(d) {
+                            a.listen(d, c, b)
+                        })
+                    })
+                } else {
+                    var d = m(a.o, a);
+                    L(R, a.v, d)
+                }
+            }; U.prototype.o = function(a) {
+                this.u = a.button;
+                this.m = !0;
+                a = m(this.A, this);
+                R.setTimeout(a, 5E3)
+            }; U.prototype.handleClick = U.prototype.o; U.prototype.A = function() {
+                this.m = !1
+            };
+            var T = function(a, b, c) {
+                        var d = ["//", a.I ? "googleads.g.doubleclick.net": "pagead2.googlesyndication.com", "/pagead/gen_204?id=wfocus", "&gqid=" + a.B, "&qqid=" + a.C].join("");
+                        0 == b && (d += "&return=0");
+                        1 == b && (d += "&return=1&timeDelta=" + c, a.G && (d += "&cbtn=" + a.u));
+                        2 == b && (d += "&bgload=1");
+                        3 == b && (d += "&fg=1");
+                        R.google_image_requests || (R.google_image_requests = []);
+                        a = R.document.createElement("img");
+                        a.src = d;
+                        R.google_image_requests.push(a)
+                    },
+                    S = function(a) {
+                        return "undefined" !== typeof a
+                    };
+            var V = function(a, b, c, d, u, f, g, h) {
+                        return new U(null, a, b, c, d, u, f, g, h)
+                    },
+                    W = ["wfocusnhinit"], X = e; W[0] in X || !X.execScript || X.execScript("var " + W[0]);
+            for (var Y; W.length && (Y = W.shift());) {
+                var Z;
+                if (Z = !W.length) Z = void 0 !== V;
+                Z ? X[Y] = V: X = X[Y] ? X[Y] : X[Y] = {}
+            };
+        }).call(this); window['window_focus_for_click'] = wfocusnhinit("mJkmWJWYHY3V2AS4k6-AAQ", "COGTvOmvotACFYQvlgod5O0KkQ", true, true, true, false, false, 0);
+    </script>
+    <script>
+        if (window.top && window.top.postMessage) {
+            window.top.postMessage('{"googMsgType":"adpnt"}', '*');
+        }
+    </script>
+    <script>
+        (function() {
+            var h = this,
+                    aa = function(a) {
+                        var b = typeof a;
+                        if ("object" == b) if (a) {
+                            if (a instanceof Array) return "array";
+                            if (a instanceof Object) return b;
+                            var c = Object.prototype.toString.call(a);
+                            if ("[object Window]" == c) return "object";
+                            if ("[object Array]" == c || "number" == typeof a.length && "undefined" != typeof a.splice && "undefined" != typeof a.propertyIsEnumerable && !a.propertyIsEnumerable("splice")) return "array";
+                            if ("[object Function]" == c || "undefined" != typeof a.call && "undefined" != typeof a.propertyIsEnumerable && !a.propertyIsEnumerable("call")) return "function"
+                        } else return "null";
+                        else if ("function" == b && "undefined" == typeof a.call) return "object";
+                        return b
+                    },
+                    ba = function(a, b, c) {
+                        return a.call.apply(a.bind, arguments)
+                    },
+                    ca = function(a, b, c) {
+                        if (!a) throw Error();
+                        if (2 < arguments.length) {
+                            var d = Array.prototype.slice.call(arguments, 2);
+                            return function() {
+                                var c = Array.prototype.slice.call(arguments);
+                                Array.prototype.unshift.apply(c, d);
+                                return a.apply(b, c)
+                            }
+                        }
+                        return function() {
+                            return a.apply(b, arguments)
+                        }
+                    },
+                    k = function(a, b, c) {
+                        k = Function.prototype.bind && -1 != Function.prototype.bind.toString().indexOf("native code") ? ba: ca;
+                        return k.apply(null, arguments)
+                    },
+                    m = Date.now ||
+                            function() {
+                                return + new Date
+                            },
+                    n = function(a, b) {
+                        function c() {}
+                        c.prototype = b.prototype;
+                        a.v = b.prototype;
+                        a.prototype = new c;
+                        a.prototype.constructor = a;
+                        a.D = function(a, c, f) {
+                            for (var d = Array(arguments.length - 2), e = 2; e < arguments.length; e++) d[e - 2] = arguments[e];
+                            return b.prototype[c].apply(a, d)
+                        }
+                    };
+            var p = document,
+                    q = window;
+            var r = String.prototype.trim ?
+                            function(a) {
+                                return a.trim()
+                            }: function(a) {
+                        return a.replace(/^[\s\xa0]+|[\s\xa0]+$/g, "")
+                    },
+                    u = function(a, b) {
+                        return a < b ? -1 : a > b ? 1 : 0
+                    };
+            var ea = function(a, b) {
+                var c = da;
+                return Object.prototype.hasOwnProperty.call(c, a) ? c[a] : c[a] = b(a)
+            };
+            var v = function(a, b) {
+                for (var c in a) Object.prototype.hasOwnProperty.call(a, c) && b.call(void 0, a[c], c, a)
+            };
+            var w = function(a, b, c, d, e) {
+                        this.l = c || 4E3;
+                        this.j = a || "&";
+                        this.m = b || ",$";
+                        this.i = void 0 !== d ? d: "trn";
+                        this.s = e || null;
+                        this.h = {};
+                        this.o = 0;
+                        this.g = []
+                    },
+                    ga = function(a, b, c, d) {
+                        b = b + "//" + c + d;
+                        var e = fa(a) - d.length - 0;
+                        if (0 > e) return "";
+                        a.g.sort(function(a, b) {
+                            return a - b
+                        });
+                        d = null;
+                        c = "";
+                        for (var f = 0; f < a.g.length; f++) for (var g = a.g[f], l = a.h[g], C = 0; C < l.length; C++) {
+                            if (!e) {
+                                d = null == d ? g: d;
+                                break
+                            }
+                            var t = x(l[C], a.j, a.m);
+                            if (t) {
+                                t = c + t;
+                                if (e >= t.length) {
+                                    e -= t.length;
+                                    b += t;
+                                    c = a.j;
+                                    break
+                                }
+                                d = null == d ? g: d
+                            }
+                        }
+                        e = "";
+                        a.i && null != d && (e = c + a.i + "=" + (a.s || d));
+                        return b + e + ""
+                    },
+                    fa = function(a) {
+                        if (!a.i) return a.l;
+                        var b = 1,
+                                c;
+                        for (c in a.h) b = c.length > b ? c.length: b;
+                        return a.l - a.i.length - b - a.j.length - 1
+                    },
+                    x = function(a, b, c, d, e) {
+                        var f = [];
+                        v(a,
+                                function(a, l) { (a = y(a, b, c, d, e)) && f.push(l + "=" + a)
+                                });
+                        return f.join(b)
+                    },
+                    y = function(a, b, c, d, e) {
+                        if (null == a) return "";
+                        b = b || "&";
+                        c = c || ",$";
+                        "string" == typeof c && (c = c.split(""));
+                        if (a instanceof Array) {
+                            if (d = d || 0, d < c.length) {
+                                for (var f = [], g = 0; g < a.length; g++) f.push(y(a[g], b, c, d + 1, e));
+                                return f.join(c[d])
+                            }
+                        } else if ("object" == typeof a) return e = e || 0,
+                                2 > e ? encodeURIComponent(x(a, b, c, d, e + 1)) : "...";
+                        return encodeURIComponent(String(a))
+                    };
+            var ia = function(a, b, c) {
+                        var d = z;
+                        if (.1 > (c ? d.j: Math.random())) try {
+                            var e;
+                            b instanceof w ? e = b: (e = new w, v(b,
+                                    function(a, b) {
+                                        var c = e,
+                                                d = c.o++,
+                                                f = {};
+                                        f[b] = a;
+                                        a = [f];
+                                        c.g.push(d);
+                                        c.h[d] = a
+                                    }));
+                            var f = ga(e, d.h, d.g, d.i + a + "&");
+                            f && ha(f)
+                        } catch(g) {}
+                    },
+                    ha = function(a) {
+                        h.google_image_requests || (h.google_image_requests = []);
+                        var b = h.document.createElement("img");
+                        b.src = a;
+                        h.google_image_requests.push(b)
+                    };
+            var ka = function() {
+                        A()
+                    },
+                    A = h.performance && h.performance.now ? k(h.performance.now, h.performance) : m;
+            var z, B = function() {
+                A()
+            };
+            n(B, ka);
+            var D;
+            a: {
+                var E = h.navigator;
+                if (E) {
+                    var F = E.userAgent;
+                    if (F) {
+                        D = F;
+                        break a
+                    }
+                }
+                D = ""
+            };
+            var G = -1 != D.indexOf("Opera"),
+                    H = -1 != D.indexOf("Trident") || -1 != D.indexOf("MSIE"),
+                    la = -1 != D.indexOf("Edge"),
+                    I = -1 != D.indexOf("Gecko") && !( - 1 != D.toLowerCase().indexOf("webkit") && -1 == D.indexOf("Edge")) && !( - 1 != D.indexOf("Trident") || -1 != D.indexOf("MSIE")) && -1 == D.indexOf("Edge"),
+                    J = -1 != D.toLowerCase().indexOf("webkit") && -1 == D.indexOf("Edge"),
+                    K = function() {
+                        var a = h.document;
+                        return a ? a.documentMode: void 0
+                    },
+                    L;
+            a: {
+                var M = "",
+                        N = function() {
+                            var a = D;
+                            if (I) return /rv\:([^\);]+)(\)|;)/.exec(a);
+                            if (la) return /Edge\/([\d\.]+)/.exec(a);
+                            if (H) return /\b(?:MSIE|rv)[: ]([^\);]+)(\)|;)/.exec(a);
+                            if (J) return /WebKit\/(\S+)/.exec(a);
+                            if (G) return /(?:Version)[ \/]?(\S+)/.exec(a)
+                        } ();
+                N && (M = N ? N[1] : "");
+                if (H) {
+                    var O = K();
+                    if (null != O && O > parseFloat(M)) {
+                        L = String(O);
+                        break a
+                    }
+                }
+                L = M
+            }
+            var P = L,
+                    da = {},
+                    Q = function(a) {
+                        return ea(a,
+                                function() {
+                                    for (var b = 0,
+                                                 c = r(String(P)).split("."), d = r(String(a)).split("."), e = Math.max(c.length, d.length), f = 0; 0 == b && f < e; f++) {
+                                        var g = c[f] || "",
+                                                l = d[f] || "";
+                                        do {
+                                            g = /(\d*)(\D*)(.*)/.exec(g) || ["", "", "", ""];
+                                            l = /(\d*)(\D*)(.*)/.exec(l) || ["", "", "", ""];
+                                            if (0 == g[0].length && 0 == l[0].length) break;
+                                            b = u(0 == g[1].length ? 0 : parseInt(g[1], 10), 0 == l[1].length ? 0 : parseInt(l[1], 10)) || u(0 == g[2].length, 0 == l[2].length) || u(g[2], l[2]);
+                                            g = g[3];
+                                            l = l[3]
+                                        } while ( 0 == b )
+                                    }
+                                    return 0 <= b
+                                })
+                    },
+                    R;
+            var S = h.document;
+            R = S && H ? K() || ("CSS1Compat" == S.compatMode ? parseInt(P, 10) : 5) : void 0; ! I && !H || H && 9 <= Number(R) || I && Q("1.9.1");
+            H && Q("9");
+            z = new
+                    function() {
+                        this.h = "http:" === q.location.protocol ? "http:": "https:";
+                        this.g = "pagead2.googlesyndication.com";
+                        this.i = "/pagead/gen_204?id=";
+                        this.j = Math.random()
+                    };
+            new B;
+            var T = function() {
+                this.j = this.j;
+                this.l = this.l
+            };
+            T.prototype.j = !1;
+            var ma = function(a) {
+                a.j || (a.j = !0, a.i())
+            };
+            T.prototype.i = function() {
+                if (this.l) for (; this.l.length;) this.l.shift()()
+            };
+            H && Q("9"); ! J || Q("528");
+            I && Q("1.9b") || H && Q("8") || G && Q("9.5") || J && Q("528");
+            I && !Q("8") || H && Q("9");
+            var U = function(a, b, c) {
+                T.call(this);
+                this.h = a;
+                this.u = b || 0;
+                this.m = c;
+                this.o = k(this.s, this)
+            };
+            n(U, T);
+            U.prototype.g = 0;
+            U.prototype.i = function() {
+                U.v.i.call(this);
+                0 != this.g && h.clearTimeout(this.g);
+                this.g = 0;
+                delete this.h;
+                delete this.m
+            };
+            U.prototype.start = function(a) {
+                0 != this.g && h.clearTimeout(this.g);
+                this.g = 0;
+                var b = this.o;
+                a = void 0 !== a ? a: this.u;
+                if ("function" != aa(b)) if (b && "function" == typeof b.handleEvent) b = k(b.handleEvent, b);
+                else throw Error("Invalid listener argument");
+                this.g = 2147483647 < Number(a) ? -1 : h.setTimeout(b, a || 0)
+            };
+            U.prototype.s = function() {
+                this.g = 0;
+                this.h && this.h.call(this.m)
+            };
+            var W = function(a, b, c) {
+                T.call(this);
+                this.h = [];
+                this.u = m();
+                this.B = c;
+                this.s = 0;
+                this.g = null;
+                this.m = p.getElementsByClassName("click_blocker_glasspane")[0];
+                "DOMContentLoaded" == a && (V(this, p, a, b), "undefined" !== typeof AFMA_Communicator && AFMA_Communicator && AFMA_Communicator.addEventListener && V(this, AFMA_Communicator, "onshow", b));
+                "onshow" == a && (V(this, q, a, b), 0 == b && (a = this.m, b = k(this.o, this), a.addEventListener ? a.addEventListener("click", b, !1) : a.attachEvent && a.attachEvent("onclick", b)))
+            };
+            n(W, T);
+            W.prototype.o = function(a) {
+                var b = this.B || "";
+                a = {
+                    dt: m() - this.u,
+                    gpc: ++this.s,
+                    x: a.clientX,
+                    y: a.clientY
+                };
+                ia(b, a, "jserror" != b)
+            };
+            W.prototype.C = function(a) {
+                var b = this.m;
+                b && (0 == a ? b.style.display = "none": (b.style.display = "block", this.g && (ma(this.g), this.g = null), this.g = new U(function() {
+                            b.style.display = "none"
+                        },
+                        a), this.g.start()))
+            };
+            var V = function(a, b, c, d) {
+                d = k(a.C, a, d);
+                b.addEventListener ? b.addEventListener(c, d, !1) : b.attachEvent && b.attachEvent("on" + c, d);
+                a.h.push({
+                    target: b,
+                    A: c,
+                    w: d
+                })
+            };
+            W.prototype.i = function() {
+                for (var a = 0; a < this.h.length; ++a) {
+                    var b = this.h[a].target,
+                            c = this.h[a].A,
+                            d = this.h[a].w;
+                    b.removeEventListener ? b.removeEventListener(c, d, !1) : b.detachEvent && b.detachEvent("on" + c, d)
+                }
+                W.v.i.call(this)
+            };
+            var na = function(a, b, c) {
+                        return new W(a, b, c)
+                    },
+                    X = ["googleInitCd"],
+                    Y = h;
+            X[0] in Y || !Y.execScript || Y.execScript("var " + X[0]);
+            for (var Z; X.length && (Z = X.shift());) X.length || void 0 === na ? Y[Z] ? Y = Y[Z] : Y = Y[Z] = {}: Y[Z] = na;
+        }).call(this);
+        googleInitCd('DOMContentLoaded', 1000);
+    </script>
+    <script>
+        (function() {
+            var d = this,
+                    h = function(a) {
+                        return "number" == typeof a
+                    },
+                    k = function(a, b, c) {
+                        return a.call.apply(a.bind, arguments)
+                    },
+                    m = function(a, b, c) {
+                        if (!a) throw Error();
+                        if (2 < arguments.length) {
+                            var e = Array.prototype.slice.call(arguments, 2);
+                            return function() {
+                                var c = Array.prototype.slice.call(arguments);
+                                Array.prototype.unshift.apply(c, e);
+                                return a.apply(b, c)
+                            }
+                        }
+                        return function() {
+                            return a.apply(b, arguments)
+                        }
+                    },
+                    n = function(a, b, c) {
+                        n = Function.prototype.bind && -1 != Function.prototype.bind.toString().indexOf("native code") ? k: m;
+                        return n.apply(null, arguments)
+                    };
+            var p = String.prototype.trim ?
+                            function(a) {
+                                return a.trim()
+                            }: function(a) {
+                        return a.replace(/^[\s\xa0]+|[\s\xa0]+$/g, "")
+                    },
+                    q = function(a, b) {
+                        return a < b ? -1 : a > b ? 1 : 0
+                    };
+            var t;
+            a: {
+                var u = d.navigator;
+                if (u) {
+                    var v = u.userAgent;
+                    if (v) {
+                        t = v;
+                        break a
+                    }
+                }
+                t = ""
+            };
+            var x = function(a, b) {
+                var c = w;
+                Object.prototype.hasOwnProperty.call(c, a) || (c[a] = b(a))
+            };
+            var y = -1 != t.indexOf("Opera"),
+                    z = -1 != t.indexOf("Trident") || -1 != t.indexOf("MSIE"),
+                    A = -1 != t.indexOf("Edge"),
+                    B = -1 != t.indexOf("Gecko") && !( - 1 != t.toLowerCase().indexOf("webkit") && -1 == t.indexOf("Edge")) && !( - 1 != t.indexOf("Trident") || -1 != t.indexOf("MSIE")) && -1 == t.indexOf("Edge"),
+                    C = -1 != t.toLowerCase().indexOf("webkit") && -1 == t.indexOf("Edge"),
+                    D = function() {
+                        var a = d.document;
+                        return a ? a.documentMode: void 0
+                    },
+                    E;
+            a: {
+                var F = "",
+                        G = function() {
+                            var a = t;
+                            if (B) return /rv\:([^\);]+)(\)|;)/.exec(a);
+                            if (A) return /Edge\/([\d\.]+)/.exec(a);
+                            if (z) return /\b(?:MSIE|rv)[: ]([^\);]+)(\)|;)/.exec(a);
+                            if (C) return /WebKit\/(\S+)/.exec(a);
+                            if (y) return /(?:Version)[ \/]?(\S+)/.exec(a)
+                        } ();
+                G && (F = G ? G[1] : "");
+                if (z) {
+                    var H = D();
+                    if (null != H && H > parseFloat(F)) {
+                        E = String(H);
+                        break a
+                    }
+                }
+                E = F
+            }
+            var I = E,
+                    w = {},
+                    J = function(a) {
+                        x(a,
+                                function() {
+                                    for (var b = 0,
+                                                 c = p(String(I)).split("."), e = p(String(a)).split("."), l = Math.max(c.length, e.length), r = 0; 0 == b && r < l; r++) {
+                                        var f = c[r] || "",
+                                                g = e[r] || "";
+                                        do {
+                                            f = /(\d*)(\D*)(.*)/.exec(f) || ["", "", "", ""];
+                                            g = /(\d*)(\D*)(.*)/.exec(g) || ["", "", "", ""];
+                                            if (0 == f[0].length && 0 == g[0].length) break;
+                                            b = q(0 == f[1].length ? 0 : parseInt(f[1], 10), 0 == g[1].length ? 0 : parseInt(g[1], 10)) || q(0 == f[2].length, 0 == g[2].length) || q(f[2], g[2]);
+                                            f = f[3];
+                                            g = g[3]
+                                        } while ( 0 == b )
+                                    }
+                                    return 0 <= b
+                                })
+                    },
+                    K;
+            var L = d.document;
+            K = L && z ? D() || ("CSS1Compat" == L.compatMode ? parseInt(I, 10) : 5) : void 0;
+            var M;
+            if (! (M = !B && !z)) {
+                var N;
+                if (N = z) N = 9 <= Number(K);
+                M = N
+            }
+            M || B && J("1.9.1");
+            z && J("9");
+            var O = function(a) {
+                this.h = null;
+                var b = {
+                    top: 10,
+                    right: 10,
+                    bottom: 10,
+                    left: 10
+                };
+                a && (a = a.split(","), 4 != a.length || isNaN(a[0]) || isNaN(a[1]) || isNaN(a[2]) || isNaN(a[3]) || (b.top = +a[0], b.right = +a[1], b.bottom = +a[2], b.left = +a[3]));
+                this.g = b
+            };
+            O.prototype.i = function(a) {
+                for (var b = !1,
+                             c = a.target; c; c = c.parentNode) if ("abgc" == c.id) {
+                    b = !0;
+                    break
+                }
+                if (!b) var e = this.h.getBoundingClientRect(),
+                        b = e.width,
+                        c = e.height,
+                        l = a.clientX - e.left,
+                        e = a.clientY - e.top,
+                        b = !(h(b) && h(c) && h(a.clientX) && h(a.clientY)) || 0 >= b || 0 >= c || 0 > l || 0 > e ? !0 : l >= this.g.left && b - l >= this.g.right && e >= this.g.top && c - e >= this.g.bottom;
+                b || (a.preventDefault ? a.preventDefault() : a.returnValue = !1)
+            };
+            var P = function(a, b) {
+                        b || (b = "");
+                        b = new O(b);
+                        b.h = a;
+                        a = b.h;
+                        var c = n(b.i, b);
+                        a.addEventListener ? a.addEventListener("click", c, !1) : a.attachEvent && a.attachEvent("onclick", c);
+                        return b
+                    },
+                    Q = ["googleInitIc"],
+                    R = d;
+            Q[0] in R || !R.execScript || R.execScript("var " + Q[0]);
+            for (var S; Q.length && (S = Q.shift());) {
+                var T;
+                if (T = !Q.length) T = void 0 !== P;
+                T ? R[S] = P: R[S] ? R = R[S] : R = R[S] = {}
+            };
+        }).call(this);
+        googleInitIc(document.body, '10,10,10,10');
+    </script>
+    <style>
+        .click_blocker_glasspane {display: none;height: 90px;left: 0;position:
+                absolute;top: 0;width: 728px;z-index: 1;}
+    </style>
+    <div class="click_blocker_glasspane">
+        <img src="//tpc.googlesyndication.com/pagead/images/transparent.png" style="height:100%; width:100%;">
+    </div>
+</body>
+
+</html>

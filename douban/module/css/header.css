@@ -1,0 +1,90 @@
+html{color:#111;background:#fff}body,div,dl,dt,dd,ul,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,blockquote{margin:0;padding:0}
+.header{
+    width: 950px;
+    margin: 0 auto;
+}
+.hdleft{  display: inline-block;
+    width: 154px;
+    height: 30px;
+    margin-right: 20px;
+}
+.hdleft img{
+    display: inline-block;
+}
+.hdform{
+    vertical-align: super;
+    position: relative;
+    display: inline-block;
+    border: 1px solid #c3c3c3;
+}
+.hdtext{
+    font-size: 13px;
+    display: inline-block;
+    width: 240px;
+    height: 20px;
+    margin-right: 3px;
+    padding: 5px;
+    border: none;
+
+}
+.hdsm{
+    position: absolute;
+    right:3px;
+    top: 11px;
+    background: url("https://img3.doubanio.com/f/sns/f71f15922ebd7c0ff0ea0e7a25577529efd8981a/pics/icon/bn_srh_1.png") no-repeat;
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    background-position: right top;
+
+
+}
+body{
+    padding-top: 30px;
+}
+.hdright{
+    list-style: none;
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+}
+.hdright li{
+    float: left;
+    width: 40px;
+    height: 36px;
+    margin-left: 20px;
+    vertical-align:middle;
+    margin-top: 5px;
+    overflow: hidden;
+}
+.hdright a{
+    font-size: 13em;
+    color: transparent;
+    vertical-align: middle;
+    overflow: hidden;
+    height: 36px;
+    width: 40px;
+    background: url("https://img3.doubanio.com/f/sns/a98a716a173efb01ba787c966b4ba337b7cf9f55/pics/sns/anony_home/anony_nav_logo.png") no-repeat ;
+}
+a.lnk-movie{
+    background-position: -60px 0;
+}
+a.lnk-music{
+    background-position: -120px 0;
+}
+a.lnk-group{
+    background-position: -180px 0;
+}
+a.lnk-events{
+    background-position: -240px 0;
+}
+a.lnk-fm{
+    background-position: -300px 0;
+}
+a.lnk-dongxi{
+    background-position: -360px 0;
+}
+a.lnk-market{
+    background-position: -420px 0;
+}
