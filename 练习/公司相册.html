@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>公司相册</title>
+    <style>
+        img{
+            width: 150px;
+        }
+        /*img:hover{*/
+            /*width: 400px;*/
+        /*}*/
+        img:target{
+            /*width: 400px;*/
+           display: block;
+        }
+        p::before{
+            content: "<p>我来了跑</p>";
+        }
+        a::after{
+
+            content:attr(href);
+        }
+
+    </style>
+    <script>
+        function x() {
+            console.log('网络来了');
+            document.getElementsByTagName('img')[0].style.width='200px';
+        }
+    </script>
+
+</head>
+<body>
+  <pre>  <button onclick="x()"><img src="../douban/module/img/0ab5b4846359f2f45e3bbb42476347788dc49b0ae5c6-awZqCn_fw236.jpg">文本   </button> <img src="../douban/module/img/0ab5b4846359f2f45e3bbb42476347788dc49b0ae5c6-awZqCn_fw236.jpg">
+      <img src="../douban/module/img/0ab5b4846359f2f45e3bbb42476347788dc49b0ae5c6-awZqCn_fw236.jpg">  <img src="../douban/module/img/0ab5b4846359f2f45e3bbb42476347788dc49b0ae5c6-awZqCn_fw236.jpg">
+  <img src="../douban/module/img/0ab5b4846359f2f45e3bbb42476347788dc49b0ae5c6-awZqCn_fw236.jpg">    <img src="../douban/module/img/0ab5b4846359f2f45e3bbb42476347788dc49b0ae5c6-awZqCn_fw236.jpg">  <img src="../douban/module/img/0ab5b4846359f2f45e3bbb42476347788dc49b0ae5c6-awZqCn_fw236.jpg">  <img src="../douban/module/img/0ab5b4846359f2f45e3bbb42476347788dc49b0ae5c6-awZqCn_fw236.jpg">
+  <img src="../douban/module/img/0ab5b4846359f2f45e3bbb42476347788dc49b0ae5c6-awZqCn_fw236.jpg">    <img src="../douban/module/img/0ab5b4846359f2f45e3bbb42476347788dc49b0ae5c6-awZqCn_fw236.jpg">  <img src="../douban/module/img/0ab5b4846359f2f45e3bbb42476347788dc49b0ae5c6-awZqCn_fw236.jpg">  <img src="../douban/module/img/0ab5b4846359f2f45e3bbb42476347788dc49b0ae5c6-awZqCn_fw236.jpg"></pre>
+<p>飒飒大阿福发的发生的</p>
+  <a href="http://www.w3school.com.cn/cssref/pr_background-color.asp">wadasdasdad</a>
+
+</body>
+</html>
